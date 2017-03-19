@@ -1,0 +1,892 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api-documentation for
+    <a
+        
+        href="https://github.com/expressjs/session#readme"
+        
+    >express-session (v1.15.1)</a>
+</h1>
+<h4>Simple session middleware for Express</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.express-session">module express-session</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.express-session.Cookie">
+            function <span class="apidocSignatureSpan">express-session.</span>Cookie
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.express-session.MemoryStore">
+            function <span class="apidocSignatureSpan">express-session.</span>MemoryStore
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.express-session.Session">
+            function <span class="apidocSignatureSpan">express-session.</span>Session
+            <span class="apidocSignatureSpan">(req, data)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.express-session.Store">
+            function <span class="apidocSignatureSpan">express-session.</span>Store
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">express-session.</span>Cookie.prototype</span>
+            
+        </li>
+        
+        <li>
+            
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">express-session.</span>MemoryStore.prototype</span>
+            
+        </li>
+        
+        <li>
+            
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">express-session.</span>Store.prototype</span>
+            
+        </li>
+        
+    </ol></li>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.express-session.Cookie">module express-session.Cookie</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.express-session.Cookie.Cookie">
+            function <span class="apidocSignatureSpan">express-session.</span>Cookie
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.express-session.Cookie.prototype">module express-session.Cookie.prototype</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.express-session.Cookie.prototype.serialize">
+            function <span class="apidocSignatureSpan">express-session.Cookie.prototype.</span>serialize
+            <span class="apidocSignatureSpan">(name, val)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.express-session.Cookie.prototype.toJSON">
+            function <span class="apidocSignatureSpan">express-session.Cookie.prototype.</span>toJSON
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">express-session.Cookie.prototype.</span>data</span>
+            
+        </li>
+        
+    </ol></li>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.express-session.MemoryStore">module express-session.MemoryStore</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.express-session.MemoryStore.MemoryStore">
+            function <span class="apidocSignatureSpan">express-session.</span>MemoryStore
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.express-session.MemoryStore.super_">
+            function <span class="apidocSignatureSpan">express-session.MemoryStore.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.express-session.MemoryStore.prototype">module express-session.MemoryStore.prototype</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.express-session.MemoryStore.prototype.all">
+            function <span class="apidocSignatureSpan">express-session.MemoryStore.prototype.</span>all
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.express-session.MemoryStore.prototype.clear">
+            function <span class="apidocSignatureSpan">express-session.MemoryStore.prototype.</span>clear
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.express-session.MemoryStore.prototype.destroy">
+            function <span class="apidocSignatureSpan">express-session.MemoryStore.prototype.</span>destroy
+            <span class="apidocSignatureSpan">(sessionId, callback)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.express-session.MemoryStore.prototype.get">
+            function <span class="apidocSignatureSpan">express-session.MemoryStore.prototype.</span>get
+            <span class="apidocSignatureSpan">(sessionId, callback)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.express-session.MemoryStore.prototype.length">
+            function <span class="apidocSignatureSpan">express-session.MemoryStore.prototype.</span>length
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.express-session.MemoryStore.prototype.set">
+            function <span class="apidocSignatureSpan">express-session.MemoryStore.prototype.</span>set
+            <span class="apidocSignatureSpan">(sessionId, session, callback)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.express-session.MemoryStore.prototype.touch">
+            function <span class="apidocSignatureSpan">express-session.MemoryStore.prototype.</span>touch
+            <span class="apidocSignatureSpan">(sessionId, session, callback)</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.express-session.Store">module express-session.Store</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.express-session.Store.Store">
+            function <span class="apidocSignatureSpan">express-session.</span>Store
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.express-session.Store.super_">
+            function <span class="apidocSignatureSpan">express-session.Store.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.express-session.Store.prototype">module express-session.Store.prototype</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.express-session.Store.prototype.createSession">
+            function <span class="apidocSignatureSpan">express-session.Store.prototype.</span>createSession
+            <span class="apidocSignatureSpan">(req, sess)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.express-session.Store.prototype.load">
+            function <span class="apidocSignatureSpan">express-session.Store.prototype.</span>load
+            <span class="apidocSignatureSpan">(sid, fn)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.express-session.Store.prototype.regenerate">
+            function <span class="apidocSignatureSpan">express-session.Store.prototype.</span>regenerate
+            <span class="apidocSignatureSpan">(req, fn)</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+    
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.express-session" id="apidoc.module.express-session">module express-session</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.express-session.Cookie" id="apidoc.element.express-session.Cookie">
+        function <span class="apidocSignatureSpan">express-session.</span>Cookie
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Cookie(options) {
+  this.path = &#x27;/&#x27;;
+  this.maxAge = null;
+  this.httpOnly = true;
+  if (options) merge(this, options);
+  this.originalMaxAge = undefined == this.originalMaxAge
+    ? this.maxAge
+    : this.originalMaxAge;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.express-session.MemoryStore" id="apidoc.element.express-session.MemoryStore">
+        function <span class="apidocSignatureSpan">express-session.</span>MemoryStore
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MemoryStore() {
+  Store.call(this)
+  this.sessions = Object.create(null)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.express-session.Session" id="apidoc.element.express-session.Session">
+        function <span class="apidocSignatureSpan">express-session.</span>Session
+        <span class="apidocSignatureSpan">(req, data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Session(req, data) {
+  Object.defineProperty(this, &#x27;req&#x27;, { value: req });
+  Object.defineProperty(this, &#x27;id&#x27;, { value: req.sessionID });
+
+  if (typeof data === &#x27;object&#x27; &#x26;&#x26; data !== null) {
+    // merge data into this, ignoring prototype properties
+    for (var prop in data) {
+      if (!(prop in this)) {
+        this[prop] = data[prop]
+      }
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.express-session.Store" id="apidoc.element.express-session.Store">
+        function <span class="apidocSignatureSpan">express-session.</span>Store
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Store() {
+  EventEmitter.call(this)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.express-session.Cookie" id="apidoc.module.express-session.Cookie">module express-session.Cookie</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.express-session.Cookie.Cookie" id="apidoc.element.express-session.Cookie.Cookie">
+        function <span class="apidocSignatureSpan">express-session.</span>Cookie
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Cookie(options) {
+  this.path = &#x27;/&#x27;;
+  this.maxAge = null;
+  this.httpOnly = true;
+  if (options) merge(this, options);
+  this.originalMaxAge = undefined == this.originalMaxAge
+    ? this.maxAge
+    : this.originalMaxAge;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.express-session.Cookie.prototype" id="apidoc.module.express-session.Cookie.prototype">module express-session.Cookie.prototype</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.express-session.Cookie.prototype.serialize" id="apidoc.element.express-session.Cookie.prototype.serialize">
+        function <span class="apidocSignatureSpan">express-session.Cookie.prototype.</span>serialize
+        <span class="apidocSignatureSpan">(name, val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">serialize = function (name, val){
+  return cookie.serialize(name, val, this.data);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * Set cookie on response.
+ *
+ * @private
+ */
+
+function setcookie(res, name, val, secret, options) {
+var signed = &#x27;s:&#x27; + signature.sign(val, secret);
+var data = cookie.<span class="apidocCodeKeywordSpan">serialize</span>(name, signed, options);
+
+debug(&#x27;set-cookie %s&#x27;, data);
+
+var prev = res.getHeader(&#x27;set-cookie&#x27;) || [];
+var header = Array.isArray(prev) ? prev.concat(data) : [prev, data];
+
+res.setHeader(&#x27;set-cookie&#x27;, header)
+...</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.express-session.Cookie.prototype.toJSON" id="apidoc.element.express-session.Cookie.prototype.toJSON">
+        function <span class="apidocSignatureSpan">express-session.Cookie.prototype.</span>toJSON
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toJSON = function (){
+  return this.data;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.express-session.MemoryStore" id="apidoc.module.express-session.MemoryStore">module express-session.MemoryStore</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.express-session.MemoryStore.MemoryStore" id="apidoc.element.express-session.MemoryStore.MemoryStore">
+        function <span class="apidocSignatureSpan">express-session.</span>MemoryStore
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MemoryStore() {
+  Store.call(this)
+  this.sessions = Object.create(null)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.express-session.MemoryStore.super_" id="apidoc.element.express-session.MemoryStore.super_">
+        function <span class="apidocSignatureSpan">express-session.MemoryStore.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Store() {
+  EventEmitter.call(this)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.express-session.MemoryStore.prototype" id="apidoc.module.express-session.MemoryStore.prototype">module express-session.MemoryStore.prototype</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.express-session.MemoryStore.prototype.all" id="apidoc.element.express-session.MemoryStore.prototype.all">
+        function <span class="apidocSignatureSpan">express-session.MemoryStore.prototype.</span>all
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function all(callback) {
+  var sessionIds = Object.keys(this.sessions)
+  var sessions = Object.create(null)
+
+  for (var i = 0; i &#x3c; sessionIds.length; i++) {
+    var sessionId = sessionIds[i]
+    var session = getSession.call(this, sessionId)
+
+    if (session) {
+      sessions[sessionId] = session;
+    }
+  }
+
+  callback &#x26;&#x26; defer(callback, null, sessions)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  * Recommended methods are ones that this module will call on the store if
+    available.
+  * Optional methods are ones this module does not call at all, but helps
+    present uniform stores to users.
+
+For an example implementation view the [connect-redis](http://github.com/visionmedia/connect-redis) repo.
+
+### store.<span class="apidocCodeKeywordSpan">all</span>(callback)
+
+**Optional**
+
+This optional method is used to get all sessions in the store as an array. The
+`callback` should be called as `callback(error, sessions)`.
+
+### store.destroy(sid, callback)
+...</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.express-session.MemoryStore.prototype.clear" id="apidoc.element.express-session.MemoryStore.prototype.clear">
+        function <span class="apidocSignatureSpan">express-session.MemoryStore.prototype.</span>clear
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function clear(callback) {
+  this.sessions = Object.create(null)
+  callback &#x26;&#x26; defer(callback)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+**Required**
+
+This required method is used to destroy/delete a session from the store given
+a session ID (`sid`). The `callback` should be called as `callback(error)` once
+the session is destroyed.
+
+### store.<span class="apidocCodeKeywordSpan">clear</span>(callback)
+
+**Optional**
+
+This optional method is used to delete all sessions from the store. The
+`callback` should be called as `callback(error)` once the store is cleared.
+
+### store.length(callback)
+...</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.express-session.MemoryStore.prototype.destroy" id="apidoc.element.express-session.MemoryStore.prototype.destroy">
+        function <span class="apidocSignatureSpan">express-session.MemoryStore.prototype.</span>destroy
+        <span class="apidocSignatureSpan">(sessionId, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function destroy(sessionId, callback) {
+  delete this.sessions[sessionId]
+  callback &#x26;&#x26; defer(callback)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```js
+req.session.regenerate(function(err) {
+// will have a new session here
+})
+```
+
+#### Session.<span class="apidocCodeKeywordSpan">destroy</span>(callback)
+
+Destroys the session and will unset the `req.session` property.
+Once complete, the `callback` will be invoked.
+
+```js
+req.session.destroy(function(err) {
+// cannot access session here
+...</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.express-session.MemoryStore.prototype.get" id="apidoc.element.express-session.MemoryStore.prototype.get">
+        function <span class="apidocSignatureSpan">express-session.MemoryStore.prototype.</span>get
+        <span class="apidocSignatureSpan">(sessionId, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function get(sessionId, callback) {
+  defer(callback, null, getSession.call(this, sessionId))
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```js
+var app = express()
+var sess = {
+  secret: &#x27;keyboard cat&#x27;,
+  cookie: {}
+}
+
+if (app.<span class="apidocCodeKeywordSpan">get</span>(&#x27;env&#x27;) === &#x27;production&#x27;) {
+  app.set(&#x27;trust proxy&#x27;, 1) // trust first proxy
+  sess.cookie.secure = true // serve secure cookies
+}
+
+app.use(session(sess))
+```
+...</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.express-session.MemoryStore.prototype.length" id="apidoc.element.express-session.MemoryStore.prototype.length">
+        function <span class="apidocSignatureSpan">express-session.MemoryStore.prototype.</span>length
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function length(callback) {
+  this.all(function (err, sessions) {
+    if (err) return callback(err)
+    callback(null, Object.keys(sessions).length)
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+### store.clear(callback)
+
+**Optional**
+
+This optional method is used to delete all sessions from the store. The
+`callback` should be called as `callback(error)` once the store is cleared.
+
+### store.<span class="apidocCodeKeywordSpan">length</span>(callback)
+
+**Optional**
+
+This optional method is used to get the count of all sessions in the store.
+The `callback` should be called as `callback(error, len)`.
+
+### store.get(sid, callback)
+...</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.express-session.MemoryStore.prototype.set" id="apidoc.element.express-session.MemoryStore.prototype.set">
+        function <span class="apidocSignatureSpan">express-session.MemoryStore.prototype.</span>set
+        <span class="apidocSignatureSpan">(sessionId, session, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function set(sessionId, session, callback) {
+  this.sessions[sessionId] = JSON.stringify(session)
+  callback &#x26;&#x26; defer(callback)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+an https-enabled website, i.e., HTTPS is necessary for secure cookies. If `secure`
+is set, and you access your site over HTTP, the cookie will not be set. If you
+have your node.js behind a proxy and are using `secure: true`, you need to set
+&#x22;trust proxy&#x22; in express:
+
+```js
+var app = express()
+app.<span class="apidocCodeKeywordSpan">set</span>(&#x27;trust proxy&#x27;, 1) // trust first proxy
+app.use(session({
+  secret: &#x27;keyboard cat&#x27;,
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: true }
+}))
+```
+...</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.express-session.MemoryStore.prototype.touch" id="apidoc.element.express-session.MemoryStore.prototype.touch">
+        function <span class="apidocSignatureSpan">express-session.MemoryStore.prototype.</span>touch
+        <span class="apidocSignatureSpan">(sessionId, session, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function touch(sessionId, session, callback) {
+  var currentSession = getSession.call(this, sessionId)
+
+  if (currentSession) {
+    // update expiration
+    currentSession.cookie = session.cookie
+    this.sessions[sessionId] = JSON.stringify(currentSession)
+  }
+
+  callback &#x26;&#x26; defer(callback)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```js
+req.session.save(function(err) {
+  // session saved
+})
+```
+
+#### Session.<span class="apidocCodeKeywordSpan">touch</span>()
+
+Updates the `.maxAge` property. Typically this is
+not necessary to call, as the session middleware does this for you.
+
+### req.session.id
+
+Each session has a unique ID associated with it. This property will
+...</pre></li>
+    </ul>
+    
+    
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.express-session.Store" id="apidoc.module.express-session.Store">module express-session.Store</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.express-session.Store.Store" id="apidoc.element.express-session.Store.Store">
+        function <span class="apidocSignatureSpan">express-session.</span>Store
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Store() {
+  EventEmitter.call(this)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.express-session.Store.super_" id="apidoc.element.express-session.Store.super_">
+        function <span class="apidocSignatureSpan">express-session.Store.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.express-session.Store.prototype" id="apidoc.module.express-session.Store.prototype">module express-session.Store.prototype</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.express-session.Store.prototype.createSession" id="apidoc.element.express-session.Store.prototype.createSession">
+        function <span class="apidocSignatureSpan">express-session.Store.prototype.</span>createSession
+        <span class="apidocSignatureSpan">(req, sess)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createSession = function (req, sess){
+  var expires = sess.cookie.expires
+    , orig = sess.cookie.originalMaxAge;
+  sess.cookie = new Cookie(sess.cookie);
+  if (&#x27;string&#x27; == typeof expires) sess.cookie.expires = new Date(expires);
+  sess.cookie.originalMaxAge = orig;
+  req.session = new Session(req, sess);
+  return req.session;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      // no session
+      } else if (!sess) {
+debug(&#x27;no session found&#x27;);
+generate();
+      // populate req.session
+      } else {
+debug(&#x27;session found&#x27;);
+store.<span class="apidocCodeKeywordSpan">createSession</span>(req, sess);
+originalId = req.sessionID;
+originalHash = hash(sess);
+
+if (!resaveSession) {
+  savedHash = originalHash
+}
+...</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.express-session.Store.prototype.load" id="apidoc.element.express-session.Store.prototype.load">
+        function <span class="apidocSignatureSpan">express-session.Store.prototype.</span>load
+        <span class="apidocSignatureSpan">(sid, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">load = function (sid, fn){
+  var self = this;
+  this.get(sid, function(err, sess){
+    if (err) return fn(err);
+    if (!sess) return fn();
+    var req = { sessionID: sid, sessionStore: self };
+    fn(null, self.createSession(req, sess))
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.express-session.Store.prototype.regenerate" id="apidoc.element.express-session.Store.prototype.regenerate">
+        function <span class="apidocSignatureSpan">express-session.Store.prototype.</span>regenerate
+        <span class="apidocSignatureSpan">(req, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">regenerate = function (req, fn){
+  var self = this;
+  this.destroy(req.sessionID, function(err){
+    self.generate(req);
+    fn(err);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  } else {
+    sess.views = 1
+    res.end(&#x27;welcome to the session demo. refresh!&#x27;)
+  }
+})
+```
+
+#### Session.<span class="apidocCodeKeywordSpan">regenerate</span>(callback)
+
+To regenerate the session simply invoke the method. Once complete,
+a new SID and `Session` instance will be initialized at `req.session`
+and the `callback` will be invoked.
+
+```js
+req.session.regenerate(function(err) {
+...</pre></li>
+    </ul>
+    
+    
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
