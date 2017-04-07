@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/expressjs/session#readme"
-
-    >express-session (v1.15.2)</a>
+    <a href="https://github.com/expressjs/session#readme">express-session (v1.15.2)</a>
 </h1>
 <h4>Simple session middleware for Express</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.express-session">module express-session</a><ol>
 
@@ -314,7 +307,7 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function Cookie(options) {
-  this.path = &#x27;/&#x27;;
+  this.path = '/';
   this.maxAge = null;
   this.httpOnly = true;
   if (options) merge(this, options);
@@ -351,10 +344,10 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function Session(req, data) {
-  Object.defineProperty(this, &#x27;req&#x27;, { value: req });
-  Object.defineProperty(this, &#x27;id&#x27;, { value: req.sessionID });
+  Object.defineProperty(this, 'req', { value: req });
+  Object.defineProperty(this, 'id', { value: req.sessionID });
 
-  if (typeof data === &#x27;object&#x27; &#x26;&#x26; data !== null) {
+  if (typeof data === 'object' &amp;&amp; data !== null) {
     // merge data into this, ignoring prototype properties
     for (var prop in data) {
       if (!(prop in this)) {
@@ -402,7 +395,7 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function Cookie(options) {
-  this.path = &#x27;/&#x27;;
+  this.path = '/';
   this.maxAge = null;
   this.httpOnly = true;
   if (options) merge(this, options);
@@ -437,15 +430,15 @@
  */
 
 function setcookie(res, name, val, secret, options) {
-var signed = &#x27;s:&#x27; + signature.sign(val, secret);
+var signed = 's:' + signature.sign(val, secret);
 var data = cookie.<span class="apidocCodeKeywordSpan">serialize</span>(name, signed, options);
 
-debug(&#x27;set-cookie %s&#x27;, data);
+debug('set-cookie %s', data);
 
-var prev = res.getHeader(&#x27;set-cookie&#x27;) || [];
+var prev = res.getHeader('set-cookie') || [];
 var header = Array.isArray(prev) ? prev.concat(data) : [prev, data];
 
-res.setHeader(&#x27;set-cookie&#x27;, header)
+res.setHeader('set-cookie', header)
 ...</pre></li>
     </ul>
 
@@ -520,7 +513,7 @@ res.setHeader(&#x27;set-cookie&#x27;, header)
   var sessionIds = Object.keys(this.sessions)
   var sessions = Object.create(null)
 
-  for (var i = 0; i &#x3c; sessionIds.length; i++) {
+  for (var i = 0; i &lt; sessionIds.length; i++) {
     var sessionId = sessionIds[i]
     var session = getSession.call(this, sessionId)
 
@@ -529,7 +522,7 @@ res.setHeader(&#x27;set-cookie&#x27;, header)
     }
   }
 
-  callback &#x26;&#x26; defer(callback, null, sessions)
+  callback &amp;&amp; defer(callback, null, sessions)
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
   * Recommended methods are ones that this module will call on the store if
@@ -561,7 +554,7 @@ This optional method is used to get all sessions in the store as an array. The
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function clear(callback) {
   this.sessions = Object.create(null)
-  callback &#x26;&#x26; defer(callback)
+  callback &amp;&amp; defer(callback)
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 
@@ -593,7 +586,7 @@ This optional method is used to delete all sessions from the store. The
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function destroy(sessionId, callback) {
   delete this.sessions[sessionId]
-  callback &#x26;&#x26; defer(callback)
+  callback &amp;&amp; defer(callback)
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 
@@ -630,12 +623,12 @@ req.session.destroy(function(err) {
 ```js
 var app = express()
 var sess = {
-  secret: &#x27;keyboard cat&#x27;,
+  secret: 'keyboard cat',
   cookie: {}
 }
 
-if (app.<span class="apidocCodeKeywordSpan">get</span>(&#x27;env&#x27;) === &#x27;production&#x27;) {
-  app.set(&#x27;trust proxy&#x27;, 1) // trust first proxy
+if (app.<span class="apidocCodeKeywordSpan">get</span>('env') === 'production') {
+  app.set('trust proxy', 1) // trust first proxy
   sess.cookie.secure = true // serve secure cookies
 }
 
@@ -689,19 +682,19 @@ The `callback` should be called as `callback(error, len)`.
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function set(sessionId, session, callback) {
   this.sessions[sessionId] = JSON.stringify(session)
-  callback &#x26;&#x26; defer(callback)
+  callback &amp;&amp; defer(callback)
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 an https-enabled website, i.e., HTTPS is necessary for secure cookies. If `secure`
 is set, and you access your site over HTTP, the cookie will not be set. If you
 have your node.js behind a proxy and are using `secure: true`, you need to set
-&#x22;trust proxy&#x22; in express:
+"trust proxy" in express:
 
 ```js
 var app = express()
-app.<span class="apidocCodeKeywordSpan">set</span>(&#x27;trust proxy&#x27;, 1) // trust first proxy
+app.<span class="apidocCodeKeywordSpan">set</span>('trust proxy', 1) // trust first proxy
 app.use(session({
-  secret: &#x27;keyboard cat&#x27;,
+  secret: 'keyboard cat',
   resave: false,
   saveUninitialized: true,
   cookie: { secure: true }
@@ -728,7 +721,7 @@ app.use(session({
     this.sessions[sessionId] = JSON.stringify(currentSession)
   }
 
-  callback &#x26;&#x26; defer(callback)
+  callback &amp;&amp; defer(callback)
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 
@@ -802,7 +795,7 @@ Each session has a unique ID associated with it. This property will
   var expires = sess.cookie.expires
     , orig = sess.cookie.originalMaxAge;
   sess.cookie = new Cookie(sess.cookie);
-  if (&#x27;string&#x27; == typeof expires) sess.cookie.expires = new Date(expires);
+  if ('string' == typeof expires) sess.cookie.expires = new Date(expires);
   sess.cookie.originalMaxAge = orig;
   req.session = new Session(req, sess);
   return req.session;
@@ -810,11 +803,11 @@ Each session has a unique ID associated with it. This property will
     <li>example usage<pre class="apidocCodePre">...
       // no session
       } else if (!sess) {
-debug(&#x27;no session found&#x27;);
+debug('no session found');
 generate();
       // populate req.session
       } else {
-debug(&#x27;session found&#x27;);
+debug('session found');
 store.<span class="apidocCodeKeywordSpan">createSession</span>(req, sess);
 originalId = req.sessionID;
 originalHash = hash(sess);
@@ -865,7 +858,7 @@ if (!resaveSession) {
     <li>example usage<pre class="apidocCodePre">...
   } else {
     sess.views = 1
-    res.end(&#x27;welcome to the session demo. refresh!&#x27;)
+    res.end('welcome to the session demo. refresh!')
   }
 })
 ```
@@ -890,3 +883,4 @@ req.session.regenerate(function(err) {
     ]
 </div>
 </div>
+</body></html>
